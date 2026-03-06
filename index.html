@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Special One ❤️</title>
+    <style>
+        body {
+            background-color: #ffb6c1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        h1 { color: #ff1493; margin-bottom: 30px; }
+        .buttons { display: flex; justify-content: center; gap: 20px; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff1493; color: white; }
+        #noBtn { background-color: #888; color: white; position: relative; }
+        .success-msg { display: none; }
+        .success-msg h2 { color: #d63384; font-size: 2.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainBox">
+        <h1 id="question">Will you be my forever? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="showSuccess()">Yes</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div class="success-msg" id="successBox">
+        <h2>I Knew You'd Say Yes! 💖</h2>
+        <p style="font-size: 1.5rem;">I Love You So Much! 🥰</p>
+        <div style="font-size: 50px;">🎉💍🌹</div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'absolute';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function showSuccess() {
+            document.getElementById('mainBox').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+            document.body.style.backgroundColor = '#ff69b4';
+        }
+    </script>
+</body>
+</html>
